@@ -48,5 +48,6 @@ jobs:
       run: |
         gcloud components update
         gcloud container clusters get-credentials quantum-pilot-426923-f3-gke --region us-east5 --project quantum-pilot-426923-f3
+        kubectl create ns grafana
         helm repo add grafana https://grafana.github.io/helm-charts
         helm install my-grafana grafana/grafana -f values.yaml -n grafana 
